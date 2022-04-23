@@ -15,26 +15,20 @@ class Solution:
     
         ans = temp = ListNode(0)
         while list1 or list2:
-            list1_value = "False"
-            list2_value = "False"
-
-            if list1:
-                list1_value = list1.val
-            if list2:
+            if list1 and list2:
                 list2_value = list2.val
-            
-            if list1_value!="False" and list2_value!="False":
+                list1_value = list1.val
                 if list1_value > list2_value:
                     value = list2_value
                     list2 = list2.next
                 else:
                     value = list1_value
                     list1 = list1.next
-            elif list1_value!="False":
-                value = list1_value
+            elif list1:
+                value = list1.val
                 list1 = list1.next
             else:
-                value = list2_value
+                value = list2.val
                 list2 = list2.next
 
             temp.next = ListNode(value)
