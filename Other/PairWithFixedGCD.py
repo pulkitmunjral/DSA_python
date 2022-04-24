@@ -24,4 +24,4 @@ def findSum(n, k):
 
     return ans*k
 
-print(findSum(3, 1))
+print(findSum(4, 10))
