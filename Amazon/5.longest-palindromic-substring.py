@@ -13,12 +13,13 @@ class Solution:
     def longestPalindrome(self, s: str) -> str:
         if len(s)<2:
             return s
+            
         i = 0 
         temp = s[0]
         max = ""
         for i in range(len(s)):
             j=len(s)-1
-            while(i<j):
+            while i<j:
                 if s[i]==s[j]:
                     temp = s[i:j+1]
                     if temp == temp[::-1]:
