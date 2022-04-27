@@ -14,5 +14,6 @@ def product(array):
         temp *= array[j]
     return ans
 
-arr = [-1,1,0,-3,3]
+
+arr = [-1, 1,0,-3,3]
 print(product(arr))
