@@ -12,9 +12,6 @@ class Node:
         self.value = value
 
 
-
-
-
 def leftViewTree(root, level, li):
 
     global maxLevel
