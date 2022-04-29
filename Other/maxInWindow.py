@@ -11,13 +11,14 @@ def biggerElementRight(array):
     ans = [0]*size
     for i in range(size-1, -1, -1):
 
-        while stack and array[i]>array[stack[-1]]:
+        while stack and array[i] >= array[stack[-1]]:
             stack.pop()
 
-        if not stack:
-            ans[i] = size
-        else:
+        if stack:
             ans[i] = stack[-1]
+
+        else:
+            ans[i] = size
         stack.append(i)
 
     return ans
