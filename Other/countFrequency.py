@@ -41,5 +41,15 @@ def countFrequency(sub):
         if tree.get_val(i) == 1:
             return i
 
+
+def findFrequency(S):
+    ans = [0] * 26
+
+    for i in S:
+        ans[ord(i) - ord('a')] += 1
+    return ans
+
+
 su = "abcabcdeddd"
 print(countFrequency(su))
+print(findFrequency(su))
