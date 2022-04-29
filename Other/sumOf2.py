@@ -44,6 +44,38 @@ def findIndex(array, target):
     return "Not possible"
 
 
-array = [2, 11, 5, 10, 7, 8]
-print(findIndex(array, 9))
+
+def find(array, target):
+
+    hashMap = {}
+    ans = []
+    for i in range(len(array)):
+        if array[i] in hashMap:
+            hashMap[array[i]] += 1
+        else:
+            hashMap[array[i]] = 1
+
+        sub = target - array[i]
+        if sub not in hashMap:
+            continue
+
+        if sub == array[i]:
+
+            if hashMap[array[i]] > 1:
+                ans.append((array[i], array[i]))
+                hashMap[array[i]] -= 2
+        else:
+
+            if hashMap[array[i]] > 0 and hashMap[sub] > 0:
+                ans.append((array[i], sub))
+
+                hashMap[array[i]] -= 1
+
+                hashMap[sub] -= 1
+
+    return ans if ans else [(-1, -1)]
+
+
+array = [2, 11, 5, 10, 7, 8, 1]
+print(find(array, 9))
 
