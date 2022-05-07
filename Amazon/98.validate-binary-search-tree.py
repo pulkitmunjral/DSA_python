@@ -13,7 +13,7 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        def checkTree(root,min, max ):
+        def checkTree(root, min, max):
             if not root:
                 return True
             if root.val <= min or root.val >= max:
@@ -26,7 +26,7 @@ class Solution:
                 return right
             return False
 
-        return checkTree(root, -10**31, 10**31)
+        return checkTree(root, -2**32, 2**32)
         
 # @lc code=end
 
