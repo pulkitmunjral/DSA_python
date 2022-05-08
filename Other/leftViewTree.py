@@ -31,4 +31,4 @@ root.right = Node(3)
 root.left.right = Node(5)
 
 
-leftViewTree(root,0)
+leftViewTree(root, 0)
