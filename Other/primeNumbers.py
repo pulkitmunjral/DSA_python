@@ -1,10 +1,11 @@
 # remove all the tables
 
 def getSumOfNPrimeNumebrs(n):
-    prime = [1]*100003
-    for i in range(2, len(prime)):
+    till = 100003
+    prime = [1]*till
+    for i in range(2, int(till**0.5)+1):
         if prime[i] == 1:
-            for j in range(i+i, 100003, i):
+            for j in range(i*i, till, i):
                 prime[j] = 0
 
     ans = 0
