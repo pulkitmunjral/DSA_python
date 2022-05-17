@@ -1,4 +1,7 @@
-'''You are given an N*M binary matrix, considering for every 0-cell(cell with value = 0) the distance from this cell to its nearest 1-cell(cell with value = 1) is 'di', you need to find the maximum value of 'di' among all values of 'di'. Formally, if the minimum distance from an 'ith' 0-cell to any 1-cell is ‘di’, you need to find max(di), where i belongs to the set of all 0-cells in the matrix.
+'''You are given an N*M binary matrix, considering for every 0-cell(cell with value = 0) the distance from this
+ cell to its nearest 1-cell(cell with value = 1) is 'di', you need to find the maximum value of 'di'
+ among all values of 'di'. Formally, if the minimum distance from an 'ith' 0-cell to any 1-cell is ‘di’,
+  you need to find max(di), where i belongs to the set of all 0-cells in the matrix.
 Distance between cells (i,j) and (a,b) is given as (|i-a| + |j-b|) i.e the manhattan distance is considered here.
 '''
 
