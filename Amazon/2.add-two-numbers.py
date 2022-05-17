@@ -12,7 +12,7 @@ class ListNode:
         self.next = next
 class Solution:
     def addTwoNumbers(self, l1, l2):
-        rem = 0 
+        carry = 0 
         temp = ans = ListNode(0)
         while l1 or l2:
             l1_current = 0
@@ -23,18 +23,15 @@ class Solution:
             if l2:
                 l2_current = l2.val
                 l2 = l2.next
-            sum =  l1_current +  l2_current + rem
+            sum =  l1_current +  l2_current + carry
             value = sum%10
-            rem = sum//10
+            carry = sum//10
             temp.next = ListNode(value)
             temp = temp.next
-        if rem>0:
-            temp.next = ListNode(rem)
+        if carry>0:
+            temp.next = ListNode(carry)
         
         return ans.next
-
-
-
 
 
 # @lc code=end
