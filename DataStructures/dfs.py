@@ -12,25 +12,25 @@ class Graph:
     def addEdge(self, u, v):
         self.graph[u].append(v)
 
-    def BFS(self, s):
+    def DFS(self, s):
 
         # Mark all the vertices as not visited
-        visited = [False] * (max(self.graph) + 1)
+        visited = set()
         stack = []
 
         # Mark the source node as
         # visited and enqueue it
         stack.append(s)
-        visited[s] = True
+        visited.add(s)
 
         while stack:
             s = stack.pop()
             print(s, end=" ")
 
             for i in self.graph[s]:
-                if visited[i] == False:
+                if i not in visited:
                     stack.append(i)
-                    visited[i] = True
+                    visited.add(i)
 
 
 # Driver code
@@ -38,9 +38,10 @@ class Graph:
 # Create a graph given in
 # the above diagram
 g = Graph() # Total 5 vertices in graph
-g.addEdge(1, 0)
+g.addEdge(0, 1)
 g.addEdge(0, 2)
-g.addEdge(2, 1)
-g.addEdge(0, 3)
-g.addEdge(1, 4)
-g.BFS(0)
+g.addEdge(1, 2)
+g.addEdge(2, 0)
+g.addEdge(2, 3)
+g.addEdge(3, 4)
+g.DFS(2)
