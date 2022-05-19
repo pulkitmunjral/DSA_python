@@ -15,22 +15,22 @@ class Graph:
     def BFS(self, s):
 
         # Mark all the vertices as not visited
-        visited = [False] * (max(self.graph) + 1)
+        visited = set()
         queue = []
 
         # Mark the source node as
         # visited and enqueue it
         queue.append(s)
-        visited[s] = True
+        visited.add(s)
 
         while queue:
             s = queue.pop(0)
             print(s, end=" ")
 
             for i in self.graph[s]:
-                if visited[i] == False:
+                if i not in visited:
                     queue.append(i)
-                    visited[i] = True
+                    visited.add(i)
 
 
 # Driver code
@@ -43,6 +43,6 @@ g.addEdge(0, 2)
 g.addEdge(1, 2)
 g.addEdge(2, 0)
 g.addEdge(2, 3)
-g.addEdge(3, 3)
+g.addEdge(3, 4)
 
 g.BFS(2)
